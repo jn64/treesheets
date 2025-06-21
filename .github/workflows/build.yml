@@ -65,7 +65,7 @@ jobs:
         allowUpdates: true
         omitBody: true
         commit: ${{ github.sha }}
-        artifacts: "_build/TreeSheets-*.exe, _build/TreeSheets-*.zip"
+        artifacts: "_build/TreeSheets-*.exe, _build/TreeSheets-*.7z"
     - name: Upload artifacts
       if: github.event_name == 'pull_request'
       uses: actions/upload-artifact@v4
@@ -73,7 +73,7 @@ jobs:
         name: windows-builds
         path: |
           _build/TreeSheets-*.exe
-          _build/TreeSheets-*.zip
+          _build/TreeSheets-*.7z
 
   build-mac:
     name: Build Mac
